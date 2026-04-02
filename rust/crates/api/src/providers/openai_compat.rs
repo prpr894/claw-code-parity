@@ -506,9 +506,7 @@ impl ToolCallState {
     }
 
     fn start_event(&self) -> Option<ContentBlockStartEvent> {
-        let Some(name) = self.name.clone() else {
-            return None;
-        };
+        let name = self.name.clone()?;
         let id = self
             .id
             .clone()
